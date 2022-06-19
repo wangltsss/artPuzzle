@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ARRRRRT Puzzle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="../static/css/puzzle.css" rel="stylesheet">
+    <script src="../static/js/puzzle.js"></script>
+</head>
+<body>
+
+    <div class="modal fade" id="congrats-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Important Notice</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Congratulations! You've finished all challenges at this time!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="location.reload()">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="interactive-zone">
+        <button type="button" class="btn btn-primary mt-2 ms-5" data-bs-toggle="collapse" data-bs-target="#original">Show Original</button>
+        <button type="button" class="btn btn-primary mt-2 ms-5" hidden="true" id="next-button" onclick="custom_init()">Next Challenge!</button>
+        <button type="button" class="btn btn-primary mt-2 ms-5" hidden="true" id="restart-button" onclick="location.reload()">Start Over</button>
+        <div id="original" class="collapse">
+            <div class="card card-body" style="max-width: 15%; margin-left: auto; margin-right: auto;">
+                <img src="../static/images/0/original.jpg" id="original-img">
+            </div>
+        </div>
+    </div>
+
+    <div id="target-board" class="container mt-5 mb-5">
+        <div class="row row-cols-5 justify-content-center">
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-0"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-1"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-2"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-3"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-end">
+                <div id="blank-4"></div>
+            </div>
+        </div>
+        <div class="row row-cols-5 justify-content-center">
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-5"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-6"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-7"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-8"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-end">
+                <div id="blank-9"></div>
+            </div>
+        </div>
+        <div class="row row-cols-5 justify-content-center">
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-10"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-11"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-12"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-13"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-end">
+                <div id="blank-14"></div>
+            </div>
+        </div>
+        <div class="row row-cols-5 justify-content-center">
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-15"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-16"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-17"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start">
+                <div id="blank-18"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-end">
+                <div id="blank-19"></div>
+            </div>
+        </div>
+        <div class="row row-cols-5 justify-content-center">
+            <div class="ratio rounded col border-dark border-top border-start border-bottom">
+                <div id="blank-20"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-bottom">
+                <div id="blank-21"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-bottom">
+                <div id="blank-22"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-bottom">
+                <div id="blank-23"></div>
+            </div>
+            <div class="ratio rounded col border-dark border-top border-start border-end border-bottom">
+                <div id="blank-24"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="puzzle-pieces">
+
+    </div>
+
+</body>
+</html>
